@@ -1,15 +1,13 @@
 # SHERIA_AI Backend
 
-# ⚖️ LawBot Backend – RAG-Powered Legal Assistant
-
-This is the backend for **LawBot**, a Retrieval-Augmented Generation (RAG) system designed to help users understand **Kenyan labor laws** through a familiar interface — **WhatsApp**.  
+This is the backend for **SHERIA_AI**, a Retrieval-Augmented Generation (RAG) system designed to help users understand **Kenyan labor laws** through a familiar interface — **WhatsApp**.  
 The system retrieves relevant legal information and generates natural, conversational answers that can be easily accessed by both employees and employers.
 
 ---
 
 ## 🚀 Overview
 
-LawBot aims to make legal information, particularly **employment and labor rights**, more accessible to everyday users.  
+SHERIA_AI aims to make legal information, particularly **employment and labor rights**, more accessible to everyday users.  
 Users interact with the system via **WhatsApp**, where they can ask questions such as:
 
 > “What are my rights as an employee during termination?”  
