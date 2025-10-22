@@ -33,7 +33,10 @@ Users interact with the system via **WhatsApp**, where they can ask questions su
 > “Can my employer reduce my salary without notice?”
 
 ## Data Sources
+
 The data comes directly from the labour regulations act of kenya.This is a legible source ensuring correct information to the users.
+https://new.kenyalaw.org/akn/ke/act/2007/14/eng@2022-12-31
+
 
 ## 🧠 RAG (Retrieval-Augmented Generation) Pipeline
 
