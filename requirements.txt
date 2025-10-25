@@ -6,3 +6,7 @@ whitenoise
 dj-database-url
 beautifulsoup4
 requests
+langchain
+langchain-community
+pypdf
+faiss-cpu
