@@ -2,6 +2,7 @@ from langchain_community.document_loaders import PyPDFLoader
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema import Document
+import re #this is for regex operations to search for text that matches a pattern
 import json
 
 pdf_path = r"F:\Program Files\projects\sheria_AI\Sheria_backend\project\app\Labour Relations Act.pdf"
@@ -15,6 +16,14 @@ print(f"Loaded {len(docs)} documents from PDF.")
 full_text = ""
 for page in docs:
     full_text += page.page_content + "\n"
+
+ Split at newlines that are followed by a section-like pattern
+chunks = re.split(r'\n(?=\s*\d+[A-Z]?\.\s)', full_text)
+
+# Remove empty or whitespace-only chunks
+chunks = [chunk.strip() for chunk in chunks if chunk.strip()]
+
+
 #splitting the document
 splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 documents = splitter.split_documents(docs)
