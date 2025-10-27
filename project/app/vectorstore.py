@@ -12,7 +12,7 @@ with open(r"F:\projects\wastewise\backend\project\app\chatbot\chunks.json", "r",
     data = json.load(f)
 
 # Convert back to Document objects
-documents = [Document(page_content=d["content"], metadata=d["metadata"]) for d in data]
+documents = [Document(page_content=d["page_content"], metadata=d["metadata"]) for d in data]
 
 embeddings = OllamaEmbeddings(model="nomic-embed-text")
 

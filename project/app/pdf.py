@@ -51,28 +51,8 @@ for chunk in chunks:
     })
 
 
-# Convert LangChain Documents to plain dictionaries
-documents_as_dicts = []
-for doc in documents:
-    doc_dict = {
-        "page_content": doc.page_content,
-        "metadata": doc.metadata
-    }
-    documents_as_dicts.append(doc_dict)
-
 # Save to a JSON file
 with open("kenya_employment_act_chunks.json", "w", encoding="utf-8") as f:
-    json.dump(documents_as_dicts, f, indent=2, ensure_ascii=False)
+    json.dump(documents, f, indent=2, ensure_ascii=False)
 
 
-#splitting the document
-splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-documents = splitter.split_documents(docs)
-
-#saving as ajson file
-json_data = [
-    {"content": doc.page_content, "metadata": doc.metadata}
-    for doc in documents
-]
-with open("chunks.json", "w", encoding="utf-8") as f:
-    json.dump(json_data, f, indent=4, ensure_ascii=False)
