@@ -11,7 +11,10 @@ docs = loader.load()
 print(f"Loaded {len(docs)} documents from PDF.")
 
 
-
+#coz it goes page by page,add this
+full_text = ""
+for page in pages:
+    full_text += page.page_content + "\n"
 #splitting the document
 splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 documents = splitter.split_documents(docs)
