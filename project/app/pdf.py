@@ -5,7 +5,7 @@ from langchain_community.document_loaders import PyPDFLoader
 import re #this is for regex operations to search for text that matches a pattern
 import json
 
-pdf_path = r"F:\Program Files\projects\sheria_AI\Sheria_backend\project\app\Labour Relations Act.pdf"
+pdf_path = r"F:\Program Files\projects\sheria_AI\Sheria_backend\project\app\Labour Relations Act (1).pdf"
 loader = PyPDFLoader(pdf_path)
 
 docs = loader.load()
@@ -56,3 +56,9 @@ with open("kenya_employment_act_chunks.json", "w", encoding="utf-8") as f:
     json.dump(documents, f, indent=2, ensure_ascii=False)
 
 
+with open("kenya_employment_act_chunks.txt", "w", encoding="utf-8") as f:
+    f.write("\n\n".join(
+        [f"{doc['metadata']['section_number']}. {doc['metadata']['section_title']}\n{doc['page_content']}"
+         for doc in documents]
+    ))
+print(f"Saved {len(documents)} chunks to 'kenya_employment_act_chunks.json' and 'kenya_employment_act_chunks.txt'.")
