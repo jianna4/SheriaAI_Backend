@@ -8,7 +8,7 @@ from langchain.schema import Document
 
 
 
-with open(r"F:\projects\wastewise\backend\project\app\chatbot\chunks.json", "r", encoding="utf-8") as f:
+with open(r"F:\Program Files\projects\sheria_AI\Sheria_backend\project\app\kenya_employment_act_chunks.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # Convert back to Document objects
